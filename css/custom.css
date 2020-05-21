@@ -1,0 +1,305 @@
+/* colour reference
+
+pink: ff5168
+dark grey: 43424c
+darker grey: 363644
+teal: 29c7ac
+teal-dark: 27a089
+grey: cccccc
+darker-grey: 999999
+
+
+*/
+
+/* --------------------------------------------------------------general styles */
+
+html{
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding:0;
+    scroll-behavior: smooth;
+}
+body{
+    margin:0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    box-sizing: border-box;
+    background: #43424c;
+    color: white;
+}
+
+.hide-mobile{
+    display: none;
+}
+.hide-until-pro{
+    display: none;
+}
+.hide-until-desktop{
+    display: none;
+}
+
+
+h1{
+    font-weight: 600;
+}
+h1.title{
+    font-weight: 400;
+    font-size: 3.5em;
+}
+h4{
+    font-weight: 700;
+    font-size: 1.2em;
+    letter-spacing: 0.2em;
+}
+b{
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------global styles */
+
+
+/* forms */
+label{
+    display: block;
+    font-weight: bold;
+}
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+    color: #666;
+    border: 1px solid #c0c0ba;
+    background: #f2f2f2;
+    border-radius: 0;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 6px 12px;
+}
+input[type="submit"], button[type="submit"]{
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* main page styling */
+section{
+    z-index: 50;
+}
+div#finger-print{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url('../assets/images/fingerprint.png') no-repeat center center;
+    background-size: 170vw auto;
+    z-index: -10;
+}
+
+/* --------------------------------------------------------------header styles */
+div#pink-header{
+    width: 100vw;
+    background: #ff5168;
+    z-index: -20;
+    position: absolute;
+}
+.nav-container{
+    width: 100vw;
+    background: rgba(255, 81, 104, 0.8);
+    padding: 30px 20px;
+}
+.pink-section{
+    height: 30vh;
+}
+.nav-icons a{
+    color: white;
+    font-size: 1.5em;
+    transition: color 0.5s;
+    transition: font-size 0.5s;
+}
+.nav-icons a:hover{
+    color: #cccccc;
+    font-size: 1.8em;
+}
+#menu-btn{
+    cursor: pointer;
+    z-index: 100;
+}
+.menu{
+    background: #43424c;
+    padding: 5px 55px 5px 20px;
+    border-radius: 50px;
+    font-size: 1.5em;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    transition: background 0.5s;
+    transition: font-weight 0.5s;
+    z-index: 97;
+}
+.menu-icon{
+    background: url('../assets/images/menu-icon.png') no-repeat center center;
+    background-size: contain;
+    width: 50px;
+    height: 60px;
+    position: fixed;
+    top: 22px;
+    right: 30px;
+    transition: background 0.5s;
+    z-index: 200;
+}
+
+/* navigation menu */
+nav{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    background: #43424c;
+    padding: 30vh 20px 0 20px;
+    font-size: 1.2em;
+    transition: right 0.5s;
+    z-index: 99;;
+}
+nav ul{
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+nav ul li{
+    margin-top: 20px;
+}
+nav a{
+    color: white;
+}
+
+ /* // --------------------------------------------------------------home page */
+section#ctrl-copy{
+    transform: translateY(-8vh);
+}
+.title-card{
+    margin-bottom: 30px;
+}
+.logo{
+    width: 80vw;
+}
+
+
+ section#what-we-are-about{
+    height: 100vh;
+}
+
+
+
+
+/* --------------------------------------------------------------media queries */
+
+/* // Extra small devices (portrait phones, less than 576px) */
+/* // No media query for `xs` since this is the default in Bootstrap */
+
+/* // --------------------------------------------------------------Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+ }
+
+/* // --------------------------------------------------------------Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+     /* general styles */
+    .hide-tablet-up{
+        display: none;
+    }
+    .hide-mobile{
+        display: block;
+    }
+
+    div#finger-print{
+        background-size: 120vw auto;
+    }
+
+    /* header styles */
+    .nav-icons a{
+        font-size: 2em;
+        margin: 0 5px;
+    }
+    .menu{
+        padding: 5px 80px 5px 20px;
+        font-size: 2em;
+    }
+    .menu-icon{
+        width: 70px;
+        height: 90px;
+        top: 10px;
+    }
+
+    /* nav styles */
+    nav{
+        width: 70vw;
+    }
+    .remainder{
+        width: 100vw;
+        height: 100vh;
+        background: #43424c;
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: opacity 0.5s;
+        z-index: 98;
+    }
+
+    
+ }
+
+/* // --------------------------------------------------------------Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    /* general styles */
+    .hide-until-pro{
+        display:block;
+    }
+
+
+ }
+
+/* // --------------------------------------------------------------Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+ }
+/* --------------------------------------------------------------Extra large devices landscape */
+ @media (min-width: 1200px) and (orientation: landscape) { 
+     /* general styles */
+     .hide-until-desktop{
+        display: block;
+    }
+    .hide-from-desktop{
+        display: none;
+    }
+
+    div#finger-print{
+        background-size: 80vw auto;
+    }
+
+     /* nav styles */
+     nav{
+        width: 40vw;
+    }
+    
+ }
+
+
+ /* --------------------------------------------------------------Internet Explorer */
+ @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+
+ }

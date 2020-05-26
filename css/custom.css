@@ -1,6 +1,7 @@
 /* colour reference
 
 pink: ff5168
+darker pink: ce3a53
 dark grey: 43424c
 darker grey: 363644
 teal: 29c7ac
@@ -46,17 +47,41 @@ h1{
     font-weight: 600;
 }
 h1.title{
-    font-weight: 400;
     font-size: 3.5em;
+    font-weight: 400;
+}
+h2{
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.7em;
+    font-weight: 700;
 }
 h4{
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 1.4em;
     letter-spacing: 0.2em;
 }
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea, h3, p{
+    font-size: 1.2em;
+}
+
 b{
     font-weight: 600;
 }
+a{
+    color: white;
+    border-bottom: 2px solid #ff5168;
+    transition: 0.5s;
+}
+a:hover{
+    text-decoration: none;
+    color: #ff5168;
+}
+
 
 /* --------------------------------------------------------------global styles */
 
@@ -80,16 +105,32 @@ textarea {
     box-sizing: border-box;
     width: 100%;
     padding: 6px 12px;
+    font-size: 1.2em;
 }
-input[type="submit"], button[type="submit"]{
-    display: inline-block;
-    margin-bottom: 0;
-    vertical-align: middle;
-    cursor: pointer;
-    user-select: none;
-    background-image: none;
-    border-radius: 0;
-    box-shadow: none;
+
+
+/* buttons */
+.btn, button.btn{
+    border-radius: 50px;
+    padding: 10px 40px;
+    font-size: 1.2em;
+}
+.btn i{
+    margin: 0 10px;
+}
+.btn-secondary{
+    background: #29c7ac;
+}
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active{
+    background: #27a089;
+}
+.btn-primary{
+    background: #43424c;
+    border: #43424c;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+    background: #363644;
+    border: #363644;
 }
 
 /* main page styling */
@@ -181,13 +222,28 @@ nav ul{
 nav ul li{
     margin-top: 20px;
 }
-nav a{
+nav a {
+    color: white;
+    text-decoration: none;
+    border: none;
+    transition: 0.5s;
+}
+nav a:hover{
+    font-weight: 700;
     color: white;
 }
 
+/* footer */
+footer{
+    background: #363644;
+}
+
  /* // --------------------------------------------------------------home page */
+
+ /* landing page section */
 section#ctrl-copy{
     transform: translateY(-8vh);
+    min-height: 70vh;
 }
 .title-card{
     margin-bottom: 30px;
@@ -195,13 +251,79 @@ section#ctrl-copy{
 .logo{
     width: 80vw;
 }
+.header-text{
+    padding: 0 10px;
+}
 
+/* what we do section */
+.icon-wrapper{
+    width: 100px;
+    height: 100px;
+    padding-top: 30px;
+    border-radius: 50px;
 
- section#what-we-are-about{
-    height: 100vh;
+}
+.icon-wrapper i{
+    font-size: 40px;
+}
+.icon-teal{
+    background: #29c7ac;
+    transform: translateY(20px);
+}
+.service-wrapper{
+    background: #29c7ac;
+    padding: 50px 20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 8px 8px #27a089;
 }
 
 
+
+/* what we are about section */
+.icon-col{
+    z-index: 10;
+}
+.icon-pink{
+    background: #ff5168;
+    transform: translateY(50px);
+}
+.about-wrapper{
+    z-index: 5;
+    padding: 75px 20px 20px 20px;
+    border: 5px solid transparent;
+    border-image: url('../assets/images/border.png') 30 stretch;
+}
+
+/* contact us section */
+.brief-wrapper{
+    background: #cccccc;
+    padding: 50px 20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 8px 8px #999999;
+    color: black;
+}
+.talk-wrapper{
+    background: #29c7ac;
+    padding: 50px 20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 8px 8px #27a089;
+    color: black;
+}
+.find-us-icons a{
+    background: #ff5168;
+    color: white;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    padding-top: 5px;
+    font-size: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.find-us-icons a:hover{
+    background: #ce3a53;
+} 
 
 
 /* --------------------------------------------------------------media queries */
@@ -210,11 +332,15 @@ section#ctrl-copy{
 /* // No media query for `xs` since this is the default in Bootstrap */
 
 /* // --------------------------------------------------------------Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) { 
+@media (min-width: 576px) and (orientation: landscape) { 
+    /* homepage */
+    .logo{
+        width: 50vw;
+    }
 
  }
 
-/* // --------------------------------------------------------------Medium devices (tablets, 768px and up) */
+/* // --------------------------------------------------------------Medium devices (tablets) */
 @media (min-width: 768px) {
 
      /* general styles */
@@ -224,6 +350,20 @@ section#ctrl-copy{
     .hide-mobile{
         display: block;
     }
+
+    h1.title{
+        font-size: 6em;
+    }
+    h2{
+        font-size: 2em;
+    }
+    h4{
+        font-size: 1.6em;
+    }
+    h3, p{
+        font-size: 1.5em;
+    }
+
 
     div#finger-print{
         background-size: 120vw auto;
@@ -260,21 +400,90 @@ section#ctrl-copy{
         z-index: 98;
     }
 
+    /* homepage landing section */
+    .header-text{
+        padding: 0 120px;
+    }
+
+    /* services */
+    .service-wrapper{
+        padding: 50px 50px 20px 50px;
+    }
+
+    /* what we're about */
+    .about-wrapper{
+        padding: 75px 50px 20px 50px;
+    }
+
+    /* get in touch */
+    .brief-wrapper, .talk-wrapper{
+        padding: 50px 50px 20px 50px;
+    }
+    .find-us-icons a{
+        width: 80px;
+        height: 80px;
+        margin: 5px;
+        padding-top: 10px;
+        font-size: 40px;
+    }
+
+
     
  }
 
-/* // --------------------------------------------------------------Large devices (desktops, 992px and up) */
+/* // --------------------------------------------------------------Large devices (ipad pro) */
 @media (min-width: 992px) { 
     /* general styles */
     .hide-until-pro{
         display:block;
     }
+    h1.title{
+        font-size: 7em;
+    }
+    h2{
+        font-size: 2em;
+    }
+    h4{
+        font-size: 2.5em;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="password"],
+    input[type="search"],
+    textarea, h3, p{
+        font-size: 1.5em;
+    }
 
+    /* homepage landing */
+    .header-text{
+        padding: 0 200px;
+    }
 
+    /* services */
+    .service-wrapper{
+        padding: 50px 70px 20px 70px;
+        margin: auto 100px;
+    }
+
+    /* what we're about */
+    .about-wrapper{
+        padding: 120px 70px 20px 70px;
+        margin: auto 100px;
+    }
+
+    /* get in touch */
+    .brief-wrapper, .talk-wrapper{
+        padding: 50px 70px 20px 70px;
+        margin: auto 100px;
+    }
+    
  }
 
 /* // --------------------------------------------------------------Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { 
+    /* general */
+    
 
  }
 /* --------------------------------------------------------------Extra large devices landscape */
@@ -287,6 +496,21 @@ section#ctrl-copy{
         display: none;
     }
 
+    h1.title{
+        font-size: 8em;
+    }
+    h4{
+        font-size: 2em;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="password"],
+    input[type="search"],
+    textarea, h3, p{
+        font-size: 1.5em;
+    }
+
     div#finger-print{
         background-size: 80vw auto;
     }
@@ -295,11 +519,53 @@ section#ctrl-copy{
      nav{
         width: 40vw;
     }
+
+    /* homepage header */
+    .logo{
+        width: 30vw;
+    }
+    .header-text{
+        padding: 0 300px;
+    }
+
+    /* what we do section */
+     /* services */
+     .service-wrapper{
+        margin: auto 0;
+    }
+    .hori-line{
+        width: 125%;
+        transform: translateX(-10%);
+        height: 10px;
+        position: absolute;
+        top: 50%;
+        background: #29c7ac;
+    }
+    .icon-teal{
+        background: #29c7ac;
+        transform: translateY(0);
+        position: absolute;
+        top: Calc(50% - 50px);
+    }
     
  }
 
 
  /* --------------------------------------------------------------Internet Explorer */
  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-
+     #menu-btn{
+         display: none;
+     }
+    nav{
+        top: 10px;
+        right: 0;
+        height: auto;
+        width: auto;
+        padding: 0 40px;
+        border-radius: 50px 0 0 50px;
+    }
+    .menu-list ul li{
+        display: inline-block;
+        margin: 10px 20px 0 0;
+    }
  }

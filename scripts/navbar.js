@@ -11,7 +11,7 @@ menuBtn.addEventListener('mouseover', () => {
     menuText.style.fontWeight = '700';
     menuIcon.style.background = "url('../assets/images/menu-icon-focus.png') no-repeat center center";
     menuIcon.style.backgroundSize = 'contain';
-})
+});
 menuBtn.addEventListener('mouseout', () => {
     if(!open){
         menuText.style.background = '#43424c';
@@ -19,7 +19,7 @@ menuBtn.addEventListener('mouseout', () => {
         menuIcon.style.background = "url('../assets/images/menu-icon.png') no-repeat center center";
         menuIcon.style.backgroundSize = 'contain';
     }
-})
+});
 
 
 
@@ -44,18 +44,18 @@ const openMenu = () => {
             
         }
     }
-}
+};
 
 
 
 menuBtn.addEventListener('click', () => {
     openMenu();
-})
+});
 remainder.addEventListener('click', () => {
     openMenu();
-})
+});
 navLink.addEventListener('click', () => {
     openMenu();
-})
+});
 
 
